@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+# SPDX-FileCopyrightText: 2024 Abdelrahman Alhanbali <abdelrahman.alhanbali@gmail.com>
+# SPDX-License-Identifier: BSD-3-Clause
+for f in *.txt; do
+  echo "=== $f ==="
+  sed -n '2p' "$f"
+done
+
