@@ -1,10 +1,10 @@
-// SPDX-FileCopyrightText: 2024 Abdelrahman Alhanbali <abdelrahman.alhanbali@gmail.com>
+// SPDX-FileCopyrightText: 2025 Abdelrahman Alhanbali <abdelrahman.alhanbali@gmail.com>
 // SPDX-License-Identifier: BSD-3-Clause
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include <sys/stat.h>  // フォルダ作成用（UNIX系）
+#include <sys/stat.h>  
 
 #define MAX_FRAME 200
 #define DIM 15
@@ -25,9 +25,9 @@ int read_data(const char *filename, double data[MAX_FRAME][DIM], int *frame_coun
     FILE *fp = fopen(filename, "r");
     if (!fp) return -1;
 
-    fgets(buf, sizeof(buf), fp);  // ヘッダ1
-    fgets(buf, sizeof(buf), fp);  // ヘッダ2
-    fgets(buf, sizeof(buf), fp);  // フレーム数
+    fgets(buf, sizeof(buf), fp);  
+    fgets(buf, sizeof(buf), fp);  
+    fgets(buf, sizeof(buf), fp);  
     *frame_count = atoi(buf);
 
     for (int i = 0; i < *frame_count; i++) {
@@ -123,7 +123,7 @@ int main(int argc, char *argv[]) {
     const char *input_dir = argv[2];
     const char *path_dir = "paths";
 
-    mkdir(path_dir, 0777);  // 出力フォルダ作成（既にある場合は無視）
+    mkdir(path_dir, 0777);  // 出力フォルダ作成
 
     char tmpl_path[256], input_path[256];
     int correct = 0, total = 0;

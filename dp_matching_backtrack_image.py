@@ -1,3 +1,5 @@
+// SPDX-FileCopyrightText: 2025 Abdelrahman Alhanbali <abdelrahman.alhanbali@gmail.com>
+// SPDX-License-Identifier: BSD-3-Clause
 import os
 import glob
 import csv
